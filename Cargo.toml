@@ -1,0 +1,47 @@
+[package]
+name = "algorithms"
+version = "0.1.0"
+authors = ["david"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rand = "0.7"
+util = { path = "../../utility/util" }
+num-format = "0.4"
+itertools = "0.8.2"
+# time = "0.2.3"
+rayon = "1.1"
+crossbeam = "0.7.3"
+rocket = "0.4.2"
+rocket_cors = "0.5.1"
+serde = { version = "1.0.104", features = ["derive"] }
+serde_json = "1.0"
+voronoi = "0.1.4"
+lazy_static = "1.4.0"
+cogset = "0.2.0"
+polygon2 = "0.3.0"
+geo = "0.12.2"
+geo-booleanop = "0.1.4"
+ordered-float = "0.5.0" #This is brought in by the voronoi crate as well.
+# priority-queue = "0.7.0"
+
+[dev-dependencies]
+# criterion = { version = '0.3', features=['real_blackbox'] }
+criterion = '0.3'
+
+[dependencies.rocket_contrib]
+version = "0.4.2"
+default-features = false
+features = ["json"]
+
+[[bench]]
+name = "sort_benchmark"
+harness = false
+[[bench]]
+name = "sort_benchmark_macro"
+harness = false
+[[bench]]
+name = "coord_benchmark"
+harness = false
